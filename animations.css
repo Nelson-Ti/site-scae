@@ -1,0 +1,732 @@
+/* Animations.css - Sistema de animações para o site SCAE */
+
+/* ===== ANIMAÇÕES GERAIS ===== */
+
+/* Animação de entrada da página */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+/* ===== ANIMAÇÕES DE SCROLL ===== */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ANIMAÇÃO ESPECÍFICA DO FOOTER ===== */
+
+.custom-footer.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-footer.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animação do Footer seguindo exatamente o Figma */
+@keyframes footerSpringAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(25px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.custom-footer.animate-on-scroll.animate-in {
+  animation: footerSpringAnimation 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  /* Spring curve aproximado: mass=1, stiffness=45, damping=15 */
+}
+
+/* Smart animate effect para elementos internos */
+.custom-footer.animate-in .footer-left,
+.custom-footer.animate-in .footer-right {
+  animation: footerElementSlide 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes footerElementSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação dos elementos internos do footer - Seguindo Figma */
+.custom-footer.animate-in .footer-left {
+  animation: footerElementSlide 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.custom-footer.animate-in .footer-right {
+  animation: footerElementSlide 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ===== ANIMAÇÃO MOBILE DO FOOTER ===== */
+
+@media (max-width: 768px) {
+  /* Logo desce de muito mais alto */
+  .custom-footer.animate-in .footer-left {
+    animation: footerLogoSlideDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  
+  /* Elementos sobem de muito mais baixo */
+  .custom-footer.animate-in .footer-right {
+    animation: footerElementsSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  
+  /* Botão também sobe de muito mais baixo */
+  .custom-footer.animate-in .footer-left .btn-primary {
+    animation: footerButtonSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards;
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  
+  /* Título também sobe */
+  .custom-footer.animate-in .footer-left .footer-title {
+    animation: footerTitleSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  
+  /* Ícones sociais com animação mais dramática no mobile */
+  .custom-footer.animate-in .footer-social {
+    animation: footerIconSlideUpMobile 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+    transform: translateY(60px) scale(0.8);
+  }
+  
+  .custom-footer.animate-in .footer-social:nth-child(1) {
+    animation-delay: 0.8s;
+  }
+  
+  .custom-footer.animate-in .footer-social:nth-child(2) {
+    animation-delay: 0.8s;
+  }
+  
+  .custom-footer.animate-in .footer-social:nth-child(3) {
+    animation-delay: 1.0s;
+  }
+}
+
+@keyframes footerIconSlideUpMobile {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes footerLogoSlideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footerElementsSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footerButtonSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footerTitleSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação dos ícones sociais */
+.custom-footer.animate-in .footer-social {
+  animation: footerIconSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+}
+
+.custom-footer.animate-in .footer-social:nth-child(1) {
+  animation-delay: 0.8s;
+}
+
+.custom-footer.animate-in .footer-social:nth-child(2) {
+  animation-delay: 0.9s;
+}
+
+.custom-footer.animate-in .footer-social:nth-child(3) {
+  animation-delay: 1.0s;
+}
+
+@keyframes footerIconSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== ANIMAÇÕES DE SEÇÕES ===== */
+
+.section-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-animate.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ANIMAÇÃO ESPECÍFICA DA SEÇÃO CTA ===== */
+
+.cta-section.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(120px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cta-section.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Forçar a animação da CTA mesmo com outras classes */
+.cta-section {
+  opacity: 0;
+  transform: translateY(120px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cta-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ANIMAÇÕES DO HERO ===== */
+
+.hero-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Animação de typing para o título */
+.hero-title.typing {
+  overflow: hidden;
+  border-right: 2px solid #ff6b1c;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #ff6b1c; }
+}
+
+.tag-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ===== ANIMAÇÕES DE CARDS ===== */
+
+.beneficio-card,
+.processo-card,
+.porque-scae-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover .beneficio-icon,
+.card-hover .porque-scae-icon {
+  transform: scale(1.1) rotate(5deg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== ANIMAÇÕES DE BOTÕES ===== */
+
+.btn-primary,
+.cta-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.button-hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary::before,
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+  border-radius: inherit;
+}
+
+.button-hover::before {
+  left: 100%;
+}
+
+/* Efeito de brilho adicional */
+.btn-primary::after,
+.cta-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.button-hover::after {
+  opacity: 1;
+}
+
+/* ===== ANIMAÇÕES DO GRÁFICO ===== */
+
+.bar {
+  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 0 !important;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.bar-animate {
+  height: var(--bar-height) !important;
+  transform: scaleY(1);
+  animation: barGrow 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes barGrow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* ===== ANIMAÇÕES DE CONTADORES ===== */
+
+.numero-valor {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.numero-valor.animating {
+  animation: numberPulse 0.6s ease-in-out;
+}
+
+@keyframes numberPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== ANIMAÇÕES DO MENU MOBILE ===== */
+
+.mobile-drawer {
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drawer-open {
+  transform: translateX(0);
+}
+
+.drawer-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.backdrop-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Animação dos itens do menu mobile */
+.menu-item-animate {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.3s ease forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== ANIMAÇÕES DE LOADING ===== */
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  opacity: 0;
+  animation: pageLoad 0.5s ease-out forwards;
+}
+
+.page-loaded {
+  opacity: 1;
+}
+
+.page-loaded .hero-tags,
+.page-loaded .hero-title,
+.page-loaded .hero-subtitle,
+.page-loaded .hero-btn {
+  animation: staggerFadeIn 0.6s ease-out forwards;
+}
+
+.page-loaded .hero-tags { animation-delay: 0.1s; }
+.page-loaded .hero-title { animation-delay: 0.3s; }
+.page-loaded .hero-subtitle { animation-delay: 0.5s; }
+.page-loaded .hero-btn { animation-delay: 0.7s; }
+
+/* ===== ANIMAÇÕES DE FAQ ===== */
+
+.faq-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-question {
+  transition: all 0.3s ease;
+}
+
+.faq-answer {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== ANIMAÇÕES DE FEEDBACK ===== */
+
+.feedback-text,
+.author-name,
+.author-avatar {
+  transition: all 0.3s ease;
+}
+
+.dot {
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  transform: scale(1.2);
+}
+
+/* ===== ANIMAÇÕES DE ÍCONES ===== */
+
+.beneficio-icon,
+.porque-scae-icon,
+.numero-icon {
+  transition: all 0.3s ease;
+}
+
+.card-hover .beneficio-icon,
+.card-hover .porque-scae-icon {
+  transform: scale(1.1);
+}
+
+/* ===== ANIMAÇÕES DO FOOTER ===== */
+
+.footer-social {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social:hover {
+  transform: translateY(-3px) scale(1.1);
+  filter: brightness(1.2);
+}
+
+.footer-social img {
+  transition: all 0.3s ease;
+}
+
+.footer-social:hover img {
+  transform: scale(1.1);
+}
+
+/* ===== ANIMAÇÕES DE NAVEGAÇÃO ===== */
+
+.menu a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff6b1c;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.link-clicked {
+  animation: linkClick 0.3s ease-in-out;
+}
+
+@keyframes linkClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== ANIMAÇÕES RESPONSIVAS ===== */
+
+@media (max-width: 768px) {
+  .animate-on-scroll {
+    transform: translateY(20px);
+  }
+  
+  .section-animate {
+    transform: translateY(30px);
+  }
+  
+  .hero-animate {
+    transform: translateY(20px);
+  }
+}
+
+/* ===== ANIMAÇÕES DE PERFORMANCE ===== */
+
+/* Otimização para dispositivos que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-on-scroll,
+  .section-animate,
+  .hero-animate {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===== ANIMAÇÕES DE ESTADOS ===== */
+
+/* Estados de loading */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #ff6b1c;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estados de erro */
+.error {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* ===== ANIMAÇÕES DE SUCCESS ===== */
+
+.success {
+  animation: successPulse 0.6s ease-in-out;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
