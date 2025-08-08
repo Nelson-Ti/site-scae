@@ -120,6 +120,16 @@ footer {
 .beneficios-label {
   color: #EB6324;
   font-feature-settings: 'ss05' on;
+  font-family: Outfit, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: 2.56px;
+  text-transform: uppercase;
+
+  /*color: #EB6324;
+  font-feature-settings: 'ss05' on;
   font-family: 'Outfit', Arial, sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -127,8 +137,10 @@ footer {
   line-height: 130%;
   letter-spacing: 2.56px;
   text-transform: uppercase;
-  margin-bottom: -26px;
-  display: block;
+  display: block;*/
+
+
+  margin-bottom: -35px;
 }
 
 .beneficios-header {
@@ -153,7 +165,7 @@ footer {
   letter-spacing: -1.92px;
   width: 100%;
   max-width: 667px;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
 }
 
 .beneficios-subtitle {
@@ -177,7 +189,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* Remover grid-template-rows para evitar espaço extra */
-  gap: 24px;
+  gap: 32px;
   max-width: 1200px;
   width: 100%;
   margin-top: 40px;
@@ -227,13 +239,43 @@ footer {
 .beneficios-cards-bottom {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 32px;
   margin-top: 32px;
 }
 
 .beneficios-cards-bottom .beneficio-card {
   width: 587px;
   max-width: 100%;
+}
+
+/* Layout horizontal apenas em desktop */
+@media (min-width: 701px) {
+  .beneficios-cards-bottom .beneficio-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    padding: 32px 40px;
+    margin-bottom: 40px;
+    height: auto;
+    min-height: 168px;
+  }
+
+  .beneficios-cards-bottom .beneficio-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+  }
+
+  .beneficios-cards-bottom .beneficio-card-title {
+    flex: 1;
+    margin: 0;
+    text-align: left;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+  }
 }
 
 @media (max-width: 1250px) {
@@ -1377,21 +1419,17 @@ flex-shrink: 0;
   justify-content: center;
   gap: 0px;
   margin-bottom: 30px;
-}
+} 
 
 .tag-item {
   display: inline-flex;
   padding: 12px 24px;
-  gap: 24px;
+  gap: 10px;
   align-items: center;
-  color: #EB6324;
-  font-feature-settings: 'ss05' on;
-  font-family: Outfit;
+  font-family: Outfit ;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 130%; /* 18.2px */
-  letter-spacing: 2.24px;
   text-transform: uppercase;
 
 /*  display: inline-flex;
@@ -1431,14 +1469,16 @@ flex-shrink: 0;
 .tag-text {
   color: #999999;
   font-family: 'Outfit', sans-serif;
+  font-style: normal;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 2.24px;
   text-transform: uppercase;
 }
 
 .tag-item.active .tag-text {
   color: #eb6324;
+  font-weight: 600 !important;
 }
 
 /* Título principal */

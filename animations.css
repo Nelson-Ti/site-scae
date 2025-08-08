@@ -58,6 +58,42 @@
   }
 }
 
+/* Animação específica para hero-card-receivables */
+@keyframes receivablesCardSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes receivablesIconPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes receivablesValueGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(224, 124, 77, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(235, 99, 36, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(235, 99, 36, 0.3);
+  }
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -97,6 +133,50 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== ANIMAÇÕES ESPECÍFICAS PARA HERO-CARD-RECEIVABLES ===== */
+
+.hero-card-receivables {
+  animation: receivablesCardSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transition: all 0.3s ease;
+}
+
+.hero-card-receivables:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(243, 235, 231, 0.15);
+}
+
+.hero-card-receivables:hover .card-icon {
+  animation: receivablesIconPulse 0.6s ease-in-out;
+}
+
+.hero-card-receivables:hover .card-value {
+  animation: receivablesValueGlow 2s ease-in-out infinite;
+}
+
+.hero-card-receivables .card-icon {
+  transition: all 0.3s ease;
+}
+
+.hero-card-receivables:hover .card-icon {
+  background: #ff6b1c;
+  transform: rotate(5deg);
+}
+
+.hero-card-receivables .card-value {
+  transition: all 0.3s ease;
+}
+
+.hero-card-receivables:hover .card-value {
+  color: #ff6b1c;
+}
+
+/* Efeito de entrada quando o card aparece na viewport */
+.hero-card-receivables.animate-in {
+  animation: receivablesCardSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ===== ANIMAÇÕES DE SCROLL ===== */
 
 /* ===== ANIMAÇÃO ESPECÍFICA DO FOOTER ===== */
 
@@ -349,15 +429,14 @@
 }
 
 .card-hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover .beneficio-icon,
 .card-hover .porque-scae-icon {
-  transform: scale(1.1) rotate(5deg);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: none;
 }
 
 /* ===== ANIMAÇÕES DE BOTÕES ===== */
@@ -371,7 +450,7 @@
 
 .button-hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary::before,

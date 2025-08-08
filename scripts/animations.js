@@ -74,8 +74,7 @@ class Animations {
       .hero-tags,
       .hero-title,
       .hero-subtitle,
-      .hero-btn,
-      .hero-card
+      .hero-btn
     `);
 
     heroElements.forEach((el, index) => {

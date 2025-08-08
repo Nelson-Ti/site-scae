@@ -161,6 +161,7 @@
     flex-direction: column;
     gap: 16px;
     width: 100%;
+    margin-top: 16px !important;
   }
 
   .beneficio-card {
@@ -185,6 +186,7 @@
     font-weight: 500;
     line-height: 120%; /* 19.2px */
     align-self: stretch;
+    width: 279px !important;
   }
 
   .beneficio-icon {
@@ -894,7 +896,7 @@
   .porque-scae-grid {
     max-width: 100%;
   }
-
+ 
     
 .banner-texto h2 {
   color: #000;
