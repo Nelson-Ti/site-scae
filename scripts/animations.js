@@ -215,12 +215,18 @@ class Animations {
     // Efeito hover para cards
     const cards = document.querySelectorAll('.beneficio-card, .processo-card, .porque-scae-card');
     
+    console.log('Total de cards encontrados:', cards.length);
+    console.log('Cards de benefícios:', document.querySelectorAll('.beneficio-card').length);
+    console.log('Cards do processo:', document.querySelectorAll('.processo-card').length);
+    
     cards.forEach(card => {
       card.addEventListener('mouseenter', () => {
+        console.log('Mouse enter em:', card.className);
         card.classList.add('card-hover');
       });
       
       card.addEventListener('mouseleave', () => {
+        console.log('Mouse leave em:', card.className);
         card.classList.remove('card-hover');
       });
     });

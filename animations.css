@@ -425,7 +425,7 @@
 .beneficio-card,
 .processo-card,
 .porque-scae-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.1, 0, 0.2, 1);
 }
 
 .card-hover {
@@ -437,6 +437,28 @@
 .card-hover .beneficio-icon,
 .card-hover .porque-scae-icon {
   transform: none;
+}
+
+/* ===== ANIMAÇÕES ESPECÍFICAS PARA PROCESSO-CARD ===== */
+
+.processo-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover .processo-numero {
+  transform: scale(1.05);
+}
+
+/* Regra específica para garantir que o hover funcione */
+.processo-card.card-hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Regra com especificidade máxima para garantir que funcione */
+section .processo-cards .processo-card.card-hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* ===== ANIMAÇÕES DE BOTÕES ===== */
@@ -655,7 +677,7 @@ body {
 
 .card-hover .beneficio-icon,
 .card-hover .porque-scae-icon {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* ===== ANIMAÇÕES DO FOOTER ===== */

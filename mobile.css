@@ -822,13 +822,22 @@
   /*processo*/
   .processo-cards {
     flex-direction: column;
-    gap: 0;
+    gap: 24px;
   }
 
   .processo-seta {
-    width: 32px;
+     
+    width: 79px;
+    height: 16px;
+    transform: rotate(90deg);
+    flex-shrink: 0;
+    margin: 25px 0 !important;
+    flex-shrink: 0;
+    margin: 0 24px;
+    object-fit: contain;
+    /*width: 32px;
     height: 32px;
-    margin: 0 0 16px 0;
+    margin: 0 0 16px 0;*/
   }
 
 /*numeros*/

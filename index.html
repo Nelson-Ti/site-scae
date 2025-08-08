@@ -188,7 +188,6 @@
           </div>
           <div class="beneficio-card-title">Evite até 70% de retrabalhos e erros operacionais.</div>
         </div>
-         
       </div>
 
      
@@ -462,5 +461,29 @@
     
     <script src="scripts/feedback.js"></script>
     <script src="scripts/animations.js"></script>
+    <script>
+      // Teste temporário para verificar se os cards do processo estão funcionando
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          const processoCards = document.querySelectorAll('.processo-card');
+          console.log('Cards do processo encontrados:', processoCards.length);
+          
+          processoCards.forEach((card, index) => {
+            console.log(`Card ${index + 1}:`, card);
+            
+            // Teste manual de hover
+            card.addEventListener('mouseenter', () => {
+              console.log(`Mouse enter no card ${index + 1}`);
+              card.classList.add('card-hover');
+            });
+            
+            card.addEventListener('mouseleave', () => {
+              console.log(`Mouse leave no card ${index + 1}`);
+              card.classList.remove('card-hover');
+            });
+          });
+        }, 1000);
+      });
+    </script>
   </body>
 </html> 
