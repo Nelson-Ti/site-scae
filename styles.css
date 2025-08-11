@@ -924,16 +924,17 @@ footer {
  
 /* FAQ*/
 .faq-section {
-  width: 100%;
+  width: 1200px !important;
+  
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  padding: 0 32px;
+  padding: 0 0px;
 }
 .faq-container {
   display: flex;
-  gap: 60px;
-  max-width: 1400px;
+  gap: 0px;
+  max-width: 1200px;
   width: 100%;
 }
 .faq-left {
@@ -954,8 +955,11 @@ footer {
   font-family: 'Poppins', sans-serif;
 }
 .faq-title {
+  width: 401px !important;
+ 
+
   color: #000;
-  width: 100%;    
+  
   font-family: Poppins;
   font-size: 48px;
   font-style: normal;
@@ -965,8 +969,8 @@ footer {
   margin-bottom: 40px;
 }
 .faq-right {
-  width: 100%;
-  max-width: 700px;
+  width: 966px !important;
+  
   flex: 1;
 }
 .faq-item {
@@ -993,7 +997,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 20px;
+  padding: 24px 40px;
   cursor: pointer;
   min-height: 56px;
   text-align: left;
@@ -1001,12 +1005,12 @@ footer {
 .faq-answer {
   width: 100%;
   box-sizing: border-box;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   color: #666666;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  padding: 0 20px 24px 20px;
+  padding: 0 20px 24px 40px;
   line-height: 140%; /* 28px */
   display: none;
 }
