@@ -595,6 +595,8 @@
     font-weight: 400;
     line-height: 110%; /* 35.2px */
     letter-spacing: -1.28px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .cta-subtitle {
     width: 295px;
@@ -606,7 +608,8 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%; /
+    line-height: 120%;
+    margin-top: 0;
   }
   .cta-btn.cta-btn-white {
     width: 100%;
