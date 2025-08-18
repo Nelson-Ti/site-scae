@@ -36,4 +36,4 @@ Certifique-se de ter o **Node.js** instalado em sua máquina.
 
 ## 🧑‍💻 Autor
 
-Feito cpor [Nelson Marques](https://github.com/Nelson-Ti)
+Feito por [Nelson Marques](https://github.com/Nelson-Ti)
